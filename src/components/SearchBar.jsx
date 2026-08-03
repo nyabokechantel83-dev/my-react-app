@@ -1,3 +1,4 @@
+// Filters the projects
 function SearchBar({ search, setSearch }) {
   return (
     <div className="search-bar">
@@ -14,3 +15,4 @@ function SearchBar({ search, setSearch }) {
 }
 
 export default SearchBar;
+ 

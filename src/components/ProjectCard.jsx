@@ -1,3 +1,4 @@
+// Show the project title and description
 function ProjectCard({ project }) {
   return (
     <div className="project-card">

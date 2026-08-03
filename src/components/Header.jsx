@@ -1,3 +1,4 @@
+// The heading and the subheading of the page
 function Header() {
   return (
     <header>
