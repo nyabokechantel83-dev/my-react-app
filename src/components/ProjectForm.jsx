@@ -23,7 +23,7 @@ function ProjectForm({ addProject }) {
 
   return (
     <div className="project-form">
-      <h2>Add New Project</h2>
+      <h2>Add Project</h2>
 
       <form onSubmit={handleSubmit}>
         <label>Project Title</label>
