@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-// list the projects
+// Project grid container
 function ProjectList({ projects }) {
   if (projects.length === 0) {
     return <p>No projects found.</p>;
@@ -7,12 +7,8 @@ function ProjectList({ projects }) {
 
   return (
     <div className="project-list">
-      {/* loops through the projects */}
       {projects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          project={project}
-        />
+        <ProjectCard key={project.id} project={project} />
       ))}
     </div>
   );
