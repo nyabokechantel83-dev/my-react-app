@@ -5,7 +5,6 @@ import SearchBar from "./components/SearchBar";
 import ProjectList from "./components/ProjectList";
 
 function App() {
-  // Project data
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -24,31 +23,29 @@ function App() {
     },
   ]);
 
-  const [search, setSearch] = useState("");
-// To add a new project to the list
+  const [word, setWord] = useState("");
+
+
   function addProject(project) {
     setProjects([
       ...projects,
       {
         id: projects.length + 1,
-        title: project.title,
-        description: project.description,
+        ...project,
       },
     ]);
   }
-// filter the project based on the search 
-  const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(search.toLowerCase()),
+
+  
+  const filteredProjects = projects.filter((item) =>
+    item.title.toLowerCase().includes(word.toLowerCase()),
   );
 
   return (
     <div className="container">
       <Header />
-
       <ProjectForm addProject={addProject} />
-
-      <SearchBar search={search} setSearch={setSearch} />
-
+      <SearchBar word={word} setWord={setWord} />
       <ProjectList projects={filteredProjects} />
     </div>
   );

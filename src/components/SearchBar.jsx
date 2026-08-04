@@ -1,5 +1,4 @@
-// Project search input
-function SearchBar({ search, setSearch }) {
+function SearchBar({ word, setWord }) {
   return (
     <div className="search-bar">
       <h2>Search Projects</h2>
@@ -7,12 +6,11 @@ function SearchBar({ search, setSearch }) {
       <input
         type="text"
         placeholder="Search projects"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        value={word}
+        onChange={(e) => setWord(e.target.value)}
       />
     </div>
   );
 }
 
 export default SearchBar;
- 

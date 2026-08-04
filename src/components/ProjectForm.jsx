@@ -2,46 +2,47 @@ import { useState } from "react";
 
 function ProjectForm({ addProject }) {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [desc, setDesc] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (title === "" || description === "") {
-      alert("Please fill in all fields.");
+    if (!title.trim() || !desc.trim()) {
+      alert("All fields are required");
       return;
     }
 
-    addProject({
-      title: title,
-      description: description,
-    });
+    addProject({ title, description: desc });
 
     setTitle("");
-    setDescription("");
+    setDesc("");
   }
 
   return (
     <div className="project-form">
-      <h2>Add Project</h2>
+      <h2>New Project</h2>
 
       <form onSubmit={handleSubmit}>
-        <label>Project Title</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter project title"
-        />
+        <label>
+          Title
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Project title..."
+          />
+        </label>
 
-        <label>Description</label>
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Enter project description"
-        ></textarea>
+        <label>
+          Description
+          <textarea
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+            placeholder="What is this project about?..."
+          />
+        </label>
 
-        <button type="submit">Add Project</button>
+        <button type="submit">Save</button>
       </form>
     </div>
   );
