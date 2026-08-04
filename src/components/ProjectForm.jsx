@@ -4,6 +4,7 @@ function ProjectForm({ addProject }) {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
+  // Handle form submission
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -14,6 +15,7 @@ function ProjectForm({ addProject }) {
 
     addProject({ title, description: desc });
 
+    // Reset form fields
     setTitle("");
     setDesc("");
   }
