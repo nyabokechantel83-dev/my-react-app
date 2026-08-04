@@ -1,4 +1,4 @@
-// Filters the projects
+// Project search input
 function SearchBar({ search, setSearch }) {
   return (
     <div className="search-bar">
@@ -6,7 +6,7 @@ function SearchBar({ search, setSearch }) {
 
       <input
         type="text"
-        placeholder="Search projects..."
+        placeholder="Search projects"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
