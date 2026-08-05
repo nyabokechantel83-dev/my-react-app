@@ -6,6 +6,7 @@ import ProjectList from "./components/ProjectList";
 
 function App() {
   const [projects, setProjects] = useState([
+
     {
       id: 1,
       title: "Vehicle Rental App",
@@ -25,7 +26,6 @@ function App() {
 
   const [word, setWord] = useState("");
 
-
   function addProject(project) {
     setProjects([
       ...projects,
@@ -36,7 +36,7 @@ function App() {
     ]);
   }
 
-  
+  // filter projects based on the search word
   const filteredProjects = projects.filter((item) =>
     item.title.toLowerCase().includes(word.toLowerCase()),
   );
